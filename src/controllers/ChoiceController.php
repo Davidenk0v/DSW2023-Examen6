@@ -11,8 +11,8 @@ class ChoiceController extends Controller
 {
   public function index()
   {
-    $choices = Choice::all();
     $router = $this->router;
+    $choices = Choice::all();
     echo $this->blade->make('choice.list', compact("choices", "router"))->render();
   }
 }

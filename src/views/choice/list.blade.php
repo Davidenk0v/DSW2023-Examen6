@@ -14,7 +14,7 @@
     </tr>
   </thead>
   <tbody>
-    @forelse  ($choice as $choice)
+    @forelse  ($choices as $choice)
       <tr>
         <th scope="row">{{$choice->id}}</th>
         <td><a href="{{$choice->url}}">{{$choice->user_id}}</a></td>
