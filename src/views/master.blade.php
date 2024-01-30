@@ -20,15 +20,17 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              <a class="nav-link active" aria-current="page" href="{{$router->generate('index')}}">Inicio</a>
+            </li>
+            @isset($_SESSION['id'])
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="{{$router->generate('companies-list')}}">Empresas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Empresas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Elección de los Alumnos</a>
+              <a class="nav-link" aria-current="page" href="{{$router->generate('choice_list')}}">Elección de los Alumnos</a>
             </li>
           </ul>
+          @endif
           @if (isset($_SESSION['name']))
           <form class="d-flex" method="POST" action="#">
             <input class="form-control me-2" type="search" placeholder="Descripción" aria-label="Search" name="description">
